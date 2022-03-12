@@ -3,6 +3,8 @@ name: Check Components Status and Publish
 on:
   push:
     branches: [main]
+    paths:
+      - components/**/*.{ts,tsx} # run workflow only if components have been updated
 
 jobs:
   check-status-and-publish:
