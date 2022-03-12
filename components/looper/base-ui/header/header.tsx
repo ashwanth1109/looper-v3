@@ -3,13 +3,6 @@ import styled from 'styled-components';
 import { Menu } from '@mui/icons-material';
 import { Avatar } from '@mui/material';
 
-export type HeaderProps = {
-  /**
-   * a node to be rendered in the special component.
-   */
-  children?: React.ReactNode;
-};
-
 const Container = styled.div`
   width: 100%;
   height: 56px;
@@ -26,7 +19,7 @@ const Container = styled.div`
   }
 `;
 
-export function Header({ children }: HeaderProps) {
+export function Header() {
   return (
     <Container>
       <Menu />
