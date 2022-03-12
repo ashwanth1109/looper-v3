@@ -15,11 +15,23 @@
         "mainFile": "index.ts",
         "rootDir": "looper/base-ui/header"
     },
+    "base-ui/sidebar": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "looper/base-ui/sidebar"
+    },
     "envs/dev": {
         "scope": "ashwanth1109.looper",
         "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "looper/envs/dev"
+    },
+    "pages/home": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "looper/pages/home"
     },
     "$schema-version": "14.9.0"
 }

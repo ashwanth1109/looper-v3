@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Menu } from '@mui/icons-material';
-import { Avatar } from '@mui/material';
+import { AppBar, Avatar, Toolbar } from '@mui/material';
 
 export type HeaderProps = {
   /**
@@ -13,24 +12,32 @@ export type HeaderProps = {
 const Container = styled.div`
   width: 100%;
   height: 56px;
-  padding: 0 16px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #202020;
   box-sizing: border-box;
 
-  svg.MuiSvgIcon-root {
-    color: white;
+  header.MuiPaper-root {
+    background-color: #242423;
+    height: 56px;
+  }
+
+  div.MuiToolbar-root {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-height: initial;
+    height: 56px;
   }
 `;
 
 export function Header({ children }: HeaderProps) {
   return (
     <Container>
-      <Menu />
-      <Avatar>AR</Avatar>
+      <AppBar position="static">
+        <Toolbar>
+          <div />
+          <Avatar>AR</Avatar>
+        </Toolbar>
+      </AppBar>
     </Container>
   );
 }
