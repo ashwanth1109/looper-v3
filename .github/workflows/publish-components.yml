@@ -1,13 +1,15 @@
-name: Check Components Status
+name: Check Components Status and Publish
 
 on:
   pull_request:
     branches:
-      - "**"
+      - main
 
 jobs:
   check-status:
     runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'skip-ci')"
+
     defaults:
       run:
         working-directory: ./components
@@ -42,3 +44,14 @@ jobs:
           if [ $res = "true" ]; then echo "Status is fine"; exit 0; fi
           echo "Status didn't match the desired state. Some components were found with outstanding actions."
           exit 1
+      - name: Hard-tag pending components
+        run: bit tag --persist
+      - name: Export components
+        run: bit export
+      - name: Commit changes made to .bitmap
+        run: |
+          git config --global user.name '${{ github.actor }}'
+          git config --global user.email '${{ github.actor }}@users.noreply.github.com'
+          git add .bitmap
+          git diff --cached --exit-code --quiet || git commit -m "update .bitmap with new component versions (automated). --skip-ci"
+          git push
