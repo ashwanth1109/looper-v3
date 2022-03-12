@@ -6,6 +6,10 @@ on:
     paths:
       - components/** # run workflow only if components have been updated
 
+env:
+  BIT_TOKEN: ${{secrets.BIT_TOKEN}}
+  NODE_OPTIONS: --max-old-space-size=4096
+
 jobs:
   check-status-and-publish:
     runs-on: ubuntu-latest
