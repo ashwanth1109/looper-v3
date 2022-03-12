@@ -3,6 +3,7 @@ import { ReactAspect, ReactMain } from '@teambit/react';
 import { EnvsAspect, EnvsMain } from '@teambit/envs';
 
 import { DevAspect } from './dev.aspect';
+import { transformTsConfig } from './typescript/transform-tsconfig';
 
 /**
  * Uncomment to include config files for overrides of Typescript or Webpack
@@ -23,6 +24,10 @@ export class DevMain {
        */
 
       // react.overrideTsConfig(tsconfig),
+      react.useTypescript({
+        devConfig: [transformTsConfig],
+        buildConfig: [transformTsConfig],
+      }),
       // react.useWebpack({
       //   previewConfig: [twPreviewTransformer],
       //   devServerConfig: [twDevServerTransformer],
@@ -39,6 +44,23 @@ export class DevMain {
         transformers: [
           (config) => {
             config.setRule('no-console', ['error']);
+            config.setRule('no-use-before-define', 'off'); // provided by ts-eslin/no-use-before
+            config.setRule('@typescript-eslint/no-use-before-define', [
+              'error',
+              { typedefs: false, functions: false },
+            ]);
+            config.setRule('react/jsx-props-no-spreading', 'off');
+            config.setRule('react/require-default-props', 'off');
+            config.setRule('arrow-body-style', 'off');
+            config.setRule('prefer-arrow-callback', [
+              'warn',
+              { allowNamedFunctions: true },
+            ]);
+            config.setRule('react/destructuring-assignment', 'off');
+            config.setRule('class-methods-use-this', 'off');
+            config.setRule('jsx-a11y/click-events-have-key-events', 'off');
+            config.setRule('jsx-a11y/no-static-element-interactions', 'off');
+
             return config;
           },
         ],
@@ -54,6 +76,9 @@ export class DevMain {
         transformers: [
           (config) => {
             config.setKey('tabWidth', 2);
+            config.setKey('printWidth', 120);
+            config.setKey('singleQuote', true);
+
             return config;
           },
         ],

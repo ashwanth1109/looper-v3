@@ -11,13 +11,13 @@
 {
     "base-ui/header": {
         "scope": "ashwanth1109.looper",
-        "version": "0.0.2",
+        "version": "0.0.3",
         "mainFile": "index.ts",
         "rootDir": "looper/base-ui/header"
     },
     "envs/dev": {
         "scope": "ashwanth1109.looper",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "looper/envs/dev"
     },
