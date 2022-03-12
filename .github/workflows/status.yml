@@ -1,0 +1,44 @@
+name: Check Components Status
+
+on:
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  check-status:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./components
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node 16
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+      - name: Install BVM
+        run: npm install -g @teambit/bvm
+      - name: Install bit
+        run: bvm install
+      - name: Add bvm bin folder to path
+        run: echo "$HOME/bin" >> $GITHUB_PATH
+      - name: Configure bit
+        run: |
+          bit -v
+          bit config set interactive false
+          bit config set analytics_reporting false
+          bit config set anonymous_reporting false
+          bit config set no_warnings true
+          bit config set error_reporting true
+      - name: Install dependencies
+        run: bit install
+      - name: Compile and link
+        run: bit compile && bit link
+      - name: Check status
+        run: |
+          bit status -j
+          res=$(jq --argfile a <(bit status -j | jq 'del(.autoTagPendingComponents,.softTaggedComponents,.modifiedComponent,.newComponents)') --argfile b .bit-status-desired.json -n '($a | (.. | arrays) |= sort) as $a | ($b | (.. | arrays) |= sort) as $b | $a == $b')
+          if [ $res = "true" ]; then echo "Status is fine"; exit 0; fi
+          echo "Status didn't match the desired state. Some components were found with outstanding actions."
+          exit 1
