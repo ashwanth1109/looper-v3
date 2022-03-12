@@ -44,6 +44,8 @@ jobs:
           if [ $res = "true" ]; then echo "Status is fine"; exit 0; fi
           echo "Status didn't match the desired state. Some components were found with outstanding actions."
           exit 1
+      - name: Soft-tag all components
+        run: bit tag --all --soft -p -m '${{ github.event.head_commit.message }}'
       - name: Hard-tag pending components
         run: bit tag --persist
       - name: Export components
