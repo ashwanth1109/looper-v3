@@ -39,6 +39,10 @@
     "packageManager": "teambit.dependencies/pnpm",
     "policy": {
       "dependencies": {
+        "@emotion/react": "11.8.2",
+        "@emotion/styled": "11.8.1",
+        "@mui/icons-material": "5.5.0",
+        "@mui/material": "5.5.0",
         "@teambit/design.ui.external-link": "0.0.344",
         "@teambit/documenter.theme.theme-compositions": "4.1.1",
         "@teambit/documenter.ui.copy-box": "4.1.1",
@@ -47,12 +51,14 @@
         "@teambit/react.templates.themes.theme": "0.0.4",
         "@typescript-eslint/eslint-plugin": "4.29.3",
         "classnames": "2.3.1",
+        "core-js": "3.21.1",
         "eslint-import-resolver-node": "0.3.6",
         "eslint-plugin-import": "2.22.1",
         "eslint-plugin-jest": "24.4.0",
         "eslint-plugin-jsx-a11y": "6.4.1",
         "eslint-plugin-mdx": "1.15.0",
-        "eslint-plugin-react": "7.25.1"
+        "eslint-plugin-react": "7.25.1",
+        "styled-components": "5.3.3"
       },
       "peerDependencies": {
         "@testing-library/react": "12.0.0",
@@ -70,29 +76,32 @@
    **/
   "teambit.workspace/variants": {
     /**
-       * configures all components with namespaces 'ui', 'blocks', 'pages' and 'themes'
-       * to use the default React development environment.
-       *
-      */
+     * configures all components with namespaces 'ui', 'blocks', 'pages' and 'themes'
+     * to use the default React development environment.
+     *
+     */
+    "{base-ui/**}": {
+      "ashwanth1109.looper/envs/dev": {}
+    },
     "{ui/**}, {blocks/**}, {pages/**}, {themes/**}": {
       "teambit.react/react": {}
     },
     /**
-       * configures components with namespaces 'entities', 'modules' and 'functions' to use the 
-       * default NodeJS dev environment.
-      */
+     * configures components with namespaces 'entities', 'modules' and 'functions' to use the
+     * default NodeJS dev environment.
+     */
     "{entities/**}, {modules/**}, {functions/**}": {
       "teambit.harmony/node": {}
     },
     /**
-       * configures components with namespace 'content' to use the MDX dev environment.
-      */
+     * configures components with namespace 'content' to use the MDX dev environment.
+     */
     "{content/**}": {
       "teambit.mdx/mdx": {}
     },
     /**
-       * configures components with namespaces 'envs' and 'aspects' to use the default Aspect development environment.
-      */
+     * configures components with namespaces 'envs' and 'aspects' to use the default Aspect development environment.
+     */
     "{envs/**}, {aspects/**}, {apps/**}": {
       "teambit.harmony/aspect": {}
     }
