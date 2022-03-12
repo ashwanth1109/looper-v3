@@ -9,6 +9,12 @@
  */
 
 {
+    "base-ui/artist-filter": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "looper/base-ui/artist-filter"
+    },
     "base-ui/header": {
         "scope": "ashwanth1109.looper",
         "version": "0.0.3",
