@@ -10,8 +10,8 @@
 
 {
     "base-ui/header": {
-        "scope": "",
-        "version": "",
+        "scope": "ashwanth1109.looper",
+        "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "looper/base-ui/header"
     },
