@@ -3,8 +3,8 @@ name: Check Components Status and Publish
 on:
   push:
     branches: [main]
-    paths:
-      - components/** # run workflow only if components have been updated
+#    paths:
+#      - components/** # run workflow only if components have been updated
 
 jobs:
   check-status-and-publish:
@@ -38,6 +38,8 @@ jobs:
           bit config set anonymous_reporting false
           bit config set no_warnings true
           bit config set error_reporting true
+          bit config set user.token $BIT_TOKEN
+          bit config
       - name: Install dependencies
         run: bit install
       - name: Compile and link
