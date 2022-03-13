@@ -17,13 +17,13 @@
     },
     "base-ui/header": {
         "scope": "ashwanth1109.looper",
-        "version": "0.0.3",
+        "version": "0.0.4",
         "mainFile": "index.ts",
         "rootDir": "looper/base-ui/header"
     },
     "base-ui/sidebar": {
-        "scope": "",
-        "version": "",
+        "scope": "ashwanth1109.looper",
+        "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "looper/base-ui/sidebar"
     },
@@ -34,8 +34,8 @@
         "rootDir": "looper/envs/dev"
     },
     "pages/home": {
-        "scope": "",
-        "version": "",
+        "scope": "ashwanth1109.looper",
+        "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "looper/pages/home"
     },
