@@ -39,5 +39,11 @@
         "mainFile": "index.ts",
         "rootDir": "looper/pages/home"
     },
+    "providers/theme": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "looper/providers/theme"
+    },
     "$schema-version": "14.9.0"
 }

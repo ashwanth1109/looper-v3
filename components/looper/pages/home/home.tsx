@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { Header } from '@ashwanth1109/looper.base-ui.header';
 import { Sidebar } from '@ashwanth1109/looper.base-ui.sidebar';
+import { ThemeContext } from '@ashwanth1109/looper.providers.theme';
 
 export type HomeProps = {
   /**
@@ -20,6 +21,9 @@ const Body = styled.div`
 `;
 
 export function Home({ children }: HomeProps) {
+  const theme = React.useContext(ThemeContext);
+  console.log('theme', theme);
+
   const [open, setOpen] = React.useState(true);
 
   const handleDrawerClose = React.useCallback(() => {

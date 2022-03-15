@@ -22,6 +22,10 @@ export type SidebarProps = {
 };
 
 const Container = styled.div`
+  .MuiTypography-root {
+    font-family: 'Quicksand', sans-serif;
+  }
+
   ul.MuiList-root div.MuiListItem-root {
     padding: ${(props) => (props.open ? '8px 20px' : 'initial')};
 
