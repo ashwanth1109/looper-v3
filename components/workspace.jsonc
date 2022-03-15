@@ -83,7 +83,7 @@
     "{base-ui/**}": {
       "ashwanth1109.looper/envs/dev": {}
     },
-    "{ui/**}, {blocks/**}, {pages/**}, {themes/**}": {
+    "{ui/**}, {blocks/**}, {pages/**}, {themes/**}, {providers/**}": {
       "teambit.react/react": {}
     },
     /**

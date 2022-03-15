@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { BasicThemeUsage } from './theme-context.composition';
 import { render } from '@testing-library/react';
 

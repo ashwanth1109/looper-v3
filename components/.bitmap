@@ -11,37 +11,37 @@
 {
     "base-ui/artist-filter": {
         "scope": "ashwanth1109.looper",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "looper/base-ui/artist-filter"
     },
     "base-ui/header": {
         "scope": "ashwanth1109.looper",
-        "version": "0.0.4",
+        "version": "0.0.5",
         "mainFile": "index.ts",
         "rootDir": "looper/base-ui/header"
     },
     "base-ui/sidebar": {
         "scope": "ashwanth1109.looper",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "looper/base-ui/sidebar"
     },
     "envs/dev": {
         "scope": "ashwanth1109.looper",
-        "version": "0.0.2",
+        "version": "0.0.3",
         "mainFile": "index.ts",
         "rootDir": "looper/envs/dev"
     },
     "pages/home": {
         "scope": "ashwanth1109.looper",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "looper/pages/home"
     },
     "providers/theme": {
-        "scope": "",
-        "version": "",
+        "scope": "ashwanth1109.looper",
+        "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "looper/providers/theme"
     },
