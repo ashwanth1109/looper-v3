@@ -1,6 +1,6 @@
 module.exports = {
-  extends: ['@teambit/eslint-config-bit-react'],
+  extends: [require.resolve('configs..eslint')],
   parserOptions: {
-    project: './tsconfig.json'
+    project: './tsconfig.json',
   },
-}
+};

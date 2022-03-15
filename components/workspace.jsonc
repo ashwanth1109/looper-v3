@@ -90,7 +90,7 @@
      * configures components with namespaces 'entities', 'modules' and 'functions' to use the
      * default NodeJS dev environment.
      */
-    "{entities/**}, {modules/**}, {functions/**}": {
+    "{entities/**}, {modules/**}, {functions/**}, {configs/**}": {
       "teambit.harmony/node": {}
     },
     /**

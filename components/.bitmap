@@ -33,6 +33,12 @@
         "mainFile": "index.ts",
         "rootDir": "looper/envs/dev"
     },
+    "eslint": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.js",
+        "rootDir": "looper/configs/eslint"
+    },
     "pages/home": {
         "scope": "ashwanth1109.looper",
         "version": "0.0.2",
